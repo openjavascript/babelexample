@@ -56,8 +56,11 @@ export default class App {
         */
 
         console.log();
-
-        this.getExample().then( ()=> {
+        new Promise( function( resolve ){
+            setTimeout( resolve, 1);
+        }).then( () => {
+            return this.getExample();
+        }).then( () => {
             if( this.ip ){
                 console.log();
                 return this.getPort();
