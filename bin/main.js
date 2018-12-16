@@ -24,5 +24,6 @@ return;
 */
 
 require('babel-core/register');
+require("babel-polyfill");
 var init = require('./app').init;
 init(APP_ROOT, PROJECT_ROOT, packJSON);

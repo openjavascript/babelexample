@@ -11,6 +11,16 @@ export const Q_EXAMPLE = [
     }
 ];
 
+export const Q_CONFIRM = [
+    { 
+        "name": "confirm"
+        , "type": "list"
+        , "message": "开始执行操作？"
+        , "choices": [ 'yes', 'no' ]
+        , "default": 'yes'
+    }
+];
+
 
 /*
 export const Q_INIT_PUBLIC = [

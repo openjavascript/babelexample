@@ -61,27 +61,33 @@ export default class App {
         }).then( () => {
             return this.getExample();
         }).then( () => {
-            if( this.ip ){
-                console.log();
-                return this.getPort();
-            }else{
-                return new Promise( function( resolve ){
-                    setTimeout( resolve, 1);
-                });
-            }
-        }).then( () => {
+            this.isGood = 1;
+
             return new Promise( function( resolve ){
                 setTimeout( resolve, 1);
             });
+        }).then( () => {
+			if( !this.isGood ){
+				this.confirm = 'no';
+				return;
+			}
+            return this.getConfirm();
         }).then( ()=>{
+		 if( this.confirm == 'no' ) return;
             this.project = new ProjectExample( this );
         });
+    }
+
+    async getConfirm(){
+        let data = await this.prompt( DATA.Q_CONFIRM );
+        this.confirm = data.confirm;
     }
 
     async getExample(){
         let data = await this.prompt( DATA.Q_EXAMPLE );
         this.example = data.example;
     }
+
     fileExists( file ) {
         return fs.existsSync( file );
     }

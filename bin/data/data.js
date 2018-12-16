@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Q_EXAMPLE = undefined;
+exports.Q_CONFIRM = exports.Q_EXAMPLE = undefined;
 
 var _constant = require("./constant.js");
 
@@ -11,6 +11,14 @@ var Q_EXAMPLE = exports.Q_EXAMPLE = [{
     "name": "example",
     "type": "input",
     "message": "示例输入"
+}];
+
+var Q_CONFIRM = exports.Q_CONFIRM = [{
+    "name": "confirm",
+    "type": "list",
+    "message": "开始执行操作？",
+    "choices": ['yes', 'no'],
+    "default": 'yes'
 }];
 
 /*
